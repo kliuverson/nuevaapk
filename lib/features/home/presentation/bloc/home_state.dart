@@ -18,4 +18,8 @@ class HomeLoadSuccess extends HomeState {
   HomeLoadSuccess(this.users);
 }
 
-final class HomeLoadFailure extends HomeState {}
+final class HomeLoadFailure extends HomeState {
+  final String message;
+
+  const HomeLoadFailure(this.message);
+}
