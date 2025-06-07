@@ -12,19 +12,19 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => HomeBloc(),
       child: MaterialApp(
           title: 'My APP',
           home: BlocBuilder<HomeBloc, HomeState>(
             builder: (context, state) {
-              if (state is HomeLoadSuccess){
-                User user = state.user;
-                return Success(user: user);
-              }else if (state is HomeLoadInProgress){
+              if (state is HomeLoadSuccess) {
+                List<User> users = state.users;
+                return Success(users: users);
+              } else if (state is HomeLoadInProgress) {
                 return Loading();
-              }else if (state is HomeLoadFailure){
+              } else if (state is HomeLoadFailure) {
                 return Failure();
               }
               return InitialView();

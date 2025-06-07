@@ -12,9 +12,10 @@ final class HomeInitial extends HomeState {}
 
 final class HomeLoadInProgress extends HomeState {}
 
-final class HomeLoadSuccess extends HomeState {
-  User user;
-  HomeLoadSuccess(this.user);
+class HomeLoadSuccess extends HomeState {
+  final List<User> users;
+
+  HomeLoadSuccess(this.users);
 }
 
 final class HomeLoadFailure extends HomeState {}
