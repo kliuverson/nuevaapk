@@ -3,9 +3,7 @@ part of 'home_bloc.dart';
 sealed class HomeState extends Equatable {
   const HomeState();
   @override
-  List<Object?> props() {
-    throw UnimplementedError();
-  }
+  List<Object> get props => [];
 }
 
 final class HomeInitial extends HomeState {}
@@ -15,7 +13,7 @@ final class HomeLoadInProgress extends HomeState {}
 class HomeLoadSuccess extends HomeState {
   final List<User> users;
 
-  HomeLoadSuccess(this.users);
+  const HomeLoadSuccess(this.users);
 }
 
 final class HomeLoadFailure extends HomeState {

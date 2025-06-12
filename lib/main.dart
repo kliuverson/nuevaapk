@@ -8,9 +8,11 @@ import 'features/home/presentation/views/initial_view.dart';
 import 'features/home/presentation/views/loading_view.dart';
 import 'features/home/presentation/views/success_view.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -24,11 +26,11 @@ class MyApp extends StatelessWidget {
                 List<User> users = state.users;
                 return Success(users: users);
               } else if (state is HomeLoadInProgress) {
-                return Loading();
+                return const LoadingView();
               } else if (state is HomeLoadFailure) {
-                return Failure();
+                return const Failure();
               }
-              return InitialView();
+              return const InitialView();
             },
           )),
     );

@@ -4,10 +4,7 @@ sealed class HomeEvent extends Equatable {
   const HomeEvent();
 
   @override
-  List<Object?> props() {
-    // TODO: implement props
-    throw UnimplementedError();
+  List<Object> get props =>[];
   }
-}
 
 final class HomeSearchPressed extends HomeEvent {}
